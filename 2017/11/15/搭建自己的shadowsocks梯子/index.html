@@ -93,17 +93,22 @@
 
 
 
-<meta name="description" content="hemostead">
+<meta name="description" content="搭建自己的shadowsocks梯子需要的工具1.shadowsocks2.国外服务器一台,    服务器推荐使用vultr,这家的服务器比较便宜。    支持支付宝付款但是最低需要充值10美元.3.远程链接工具。Xshell,  购买服务器1.进入官网，点击“create Account”创建账号，,注意密码需要大写+小写+数字。2.进入首页点击“Service”服务器3 选择服务器的位置，系统">
 <meta name="keywords" content="杂七杂八">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hemostead配置">
-<meta property="og:url" content="http://chenghong.me/2017/07/15/hemostead的安装/index.html">
+<meta property="og:title" content="搭建自己的shadowsocks梯子">
+<meta property="og:url" content="http://chenghong.me/2017/11/15/搭建自己的shadowsocks梯子/index.html">
 <meta property="og:site_name" content="chenghong&#39;s blog">
-<meta property="og:description" content="hemostead">
-<meta property="og:updated_time" content="2018-01-16T07:33:43.204Z">
+<meta property="og:description" content="搭建自己的shadowsocks梯子需要的工具1.shadowsocks2.国外服务器一台,    服务器推荐使用vultr,这家的服务器比较便宜。    支持支付宝付款但是最低需要充值10美元.3.远程链接工具。Xshell,  购买服务器1.进入官网，点击“create Account”创建账号，,注意密码需要大写+小写+数字。2.进入首页点击“Service”服务器3 选择服务器的位置，系统">
+<meta property="og:image" content="http://oj42ceahd.bkt.clouddn.com/server.png">
+<meta property="og:image" content="http://oj42ceahd.bkt.clouddn.com/server1.png">
+<meta property="og:image" content="http://oj42ceahd.bkt.clouddn.com/server2.png">
+<meta property="og:image" content="http://oj42ceahd.bkt.clouddn.com/server3.png">
+<meta property="og:updated_time" content="2018-01-16T07:35:42.398Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hemostead配置">
-<meta name="twitter:description" content="hemostead">
+<meta name="twitter:title" content="搭建自己的shadowsocks梯子">
+<meta name="twitter:description" content="搭建自己的shadowsocks梯子需要的工具1.shadowsocks2.国外服务器一台,    服务器推荐使用vultr,这家的服务器比较便宜。    支持支付宝付款但是最低需要充值10美元.3.远程链接工具。Xshell,  购买服务器1.进入官网，点击“create Account”创建账号，,注意密码需要大写+小写+数字。2.进入首页点击“Service”服务器3 选择服务器的位置，系统">
+<meta name="twitter:image" content="http://oj42ceahd.bkt.clouddn.com/server.png">
 
 
 
@@ -131,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://chenghong.me/2017/07/15/hemostead的安装/"/>
+  <link rel="canonical" href="http://chenghong.me/2017/11/15/搭建自己的shadowsocks梯子/"/>
 
 
 
 
 
-  <title>hemostead配置 | chenghong's blog</title>
+  <title>搭建自己的shadowsocks梯子 | chenghong's blog</title>
   
 
 
@@ -266,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://chenghong.me/2017/07/15/hemostead的安装/">
+    <link itemprop="mainEntityOfPage" href="http://chenghong.me/2017/11/15/搭建自己的shadowsocks梯子/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chenghong">
@@ -283,7 +288,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hemostead配置</h1>
+          <h1 class="post-title" itemprop="name headline">搭建自己的shadowsocks梯子</h1>
         
 
         <div class="post-meta">
@@ -295,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-15T22:23:55+08:00">
-                2017-07-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T16:40:16+08:00">
+                2017-11-15
               </time>
             
 
@@ -330,89 +335,16 @@
       
 
       
-        <p>hemostead<br><a id="more"></a><br>安装这里就不赘述了,网上教程也有很多.直接上配置.<br>导入盒子命令:</p>
-<pre><code>- vagrant box add metadata.json
-</code></pre><p>查看git是否安装:</p>
-<pre><code>- git --version
-</code></pre><p>初始化homestead</p>
-<pre><code>- bash init.sh 这条命令会在当前目录下生成./homestead.里面有三个文件;
-</code></pre><h3 id="homestead配置文件"><a href="#homestead配置文件" class="headerlink" title="homestead配置文件"></a>homestead配置文件</h3><p>Homestead.yaml - 主要配置信息文件，我们可以在此文件中配置 Homestead 的站点和数据库等信息；<br>after.sh - 每一次 Homestead 盒子重置后（provision）会调用的 shell 脚本文件；<br>aliases - 每一次 Homestead 盒子重置后（provision），会被替换至虚拟机的 ~/.bash_aliases 文件中，aliases 里可以放一些快捷命令的定义。</p>
-<h4 id="打开配置文件"><a href="#打开配置文件" class="headerlink" title="打开配置文件"></a>打开配置文件</h4><pre><code>atom ~/.homestead/Homestead.yaml
-</code></pre><ol>
-<li>虚拟机设置</li>
-</ol>
-<p>Homestead 支持我们对虚拟机的 IP，内存，CPU，虚拟机的默认提供者进行配置。这里我们基本不需要做任何配置，因此可以跳过。</p>
-<blockquote>
-<p>ip: “192.168.10.10”<br>memory: 2048<br>cpus: 1<br>provider: virtualbox</p>
-</blockquote>
-<ol>
-<li>SSH 秘钥登录配置</li>
-</ol>
-<p>authorize 选项是指派登录虚拟机授权连接的公钥文件，此文件填写的是主机上的公钥文件地址，虚拟机初始化时，此文件里的内容会被复制存储到虚拟机的 /home/vagrant/.ssh/authorized_keys文件中，从而实现 SSH 免密码登录。在这里我们默认填写即可。</p>
-<p>authorize: ~/.ssh/id_rsa.pub<br>keys 是数组选项，填写的是本机的 SSH 私钥文件地址。虚拟机初始化时，会将此处填写的所有 SSH 私钥文件复制到虚拟机的 /home/vagrant/.ssh/ 文件夹中，从而使虚拟机能共享主机上的 SSH 私钥文件，使虚拟机具备等同于主机的身份认证。此功能为 SSH 授权提供了便利，例如在后面章节中，我们只需要在 GitHub 上配置一个 SSH 公钥，即可实现 GitHub 对虚拟机和主机共同认证。</p>
-<p>此处我们将公钥和私钥一起同步到虚拟机中：</p>
-<p>keys:</p>
-<pre><code>- ~/.ssh/id_rsa
-- ~/.ssh/id_rsa.pub
-</code></pre><p>接下来我们来生成 SSH Key，开始之前，我们先使用以下命令来检查主机上是否已经生成过 SSH Key：</p>
-<blockquote>
-<p>ls -al ~/.ssh<br>如果存在 id_rsa 和 id_rsa.pub的话，请跳过以下生成 SSH 的步骤继续阅读剩下内容。</p>
-</blockquote>
-<p>否则使用以下方法来生成 SSH Key，请将 your_email@example.com 替换为你的邮箱：</p>
-<blockquote>
-<p>ssh-keygen -t rsa -C “your_email@example.com”<br>Generating public/private rsa key pair.<br>命令行会提示让你指定秘钥的名称，按回车键将 SSH Key 保存到默认文件名即可：</p>
-</blockquote>
-<p>Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]<br>接下来会询问你为 SSH Key 设置密码，按回车键即可，默认为空密码：</p>
-<p>Enter passphrase (empty for no passphrase): [Type a passphrase]<br>Enter same passphrase again: [Type passphrase again]<br>可以都选择默认，也就是直接敲击几个 Enter 键即可。这时候我们再检查一下：</p>
-<pre><code>- ls -al ~/.ssh
-</code></pre><p>可以看到以下两个文件：</p>
-<blockquote>
-<p>id_rsa —— SSH 秘钥的 私钥 (Private Key)<br>id_rsa.pub —— SSH 秘钥的 公钥 (Public Key)</p>
-</blockquote>
-<ol>
-<li>共享文件夹配置</li>
-</ol>
-<p>我们可以通过 folders 来指明本机要映射到 Homestead 虚拟机上的文件夹。</p>
-<blockquote>
-<p>map 对应的是我们本机的文件夹<br>to 对应的是 Homestead 上的文件夹。<br>为了后续课程讲解，请统一配置如下：</p>
-</blockquote>
-<p>folders:</p>
-<pre><code>- map: ~/Code
-  to: /home/vagrant/Code
-</code></pre><p>默认 Homestead 会将我们本机的 ~/Code 文件夹映射到 /home/vagrant/Code 文件夹上。现在我们本机还没有 ~/Code 文件夹，让我们来创建一个：</p>
-<pre><code>- cd ~
-- mkdir Code
-</code></pre><p>在后面的章节中，我们将会在该文件夹下放置我们所有的 Laravel 项目，Homestead 会把该文件夹下的项目自动映射到虚拟机的 /home/vagrant/Code 文件夹上。</p>
-<ol>
-<li>站点配置#</li>
-</ol>
-<p>站点配置允许你在主机里，通过域名来访问虚拟机里的 Laravel 应用。如下面 sites 配置所示，将 homestead.app 映射到一个 Laravel 项目的 public 目录上。这一行配置，会命令 Homestead 为我们新建一个 Nginx 站点，并且把 Web Root 配置到指定目录下。Laravel 应用的 Nginx 站点 Web Root 配置，默认就是在根目录下的 public 目录。</p>
-<p>sites:</p>
-<pre><code>- map: homestead.app
-  to: /home/vagrant/Code/Laravel/public
-</code></pre><p>目前 Laravel 项目并不存在。这里先统一配置为以上，请不用着急，在后续的章节中，我们会创建该 Laravel 项目。</p>
-<p>另外，主机里直接访问虚拟机站点，必须通过绑定 hosts 来实现。接下来我们利用 hosts 文件绑定 homestead.app 到虚拟机 IP 192.168.10.10 上。hosts 文件的完整路径为 /etc/hosts，可使用下面命令打开：</p>
-<p>atom /etc/hosts<br>在 hosts 文件的最后面加入以下一行：</p>
-<pre><code>- 192.168.10.10  homestead.app
-</code></pre><p>至此站点就配置好了，等我们在后面章节创建 Laravel 项目后，即可通过浏览器访问 homestead.app 站点。</p>
-<ol>
-<li>数据库配置</li>
-</ol>
-<p>我们可以为 Homestead 指定数据库名称，这里使用默认设置即可。</p>
-<pre><code>- databases:
-- homestead
-</code></pre><ol>
-<li>自定义变量</li>
-</ol>
-<p>最后，如果你需要自定义一些在虚拟机上可以使用的自定义变量，则可以在 variables 中进行定义。</p>
-<p>variables:</p>
-<pre><code>- key: APP_ENV
-  value: local
-</code></pre><p>Homestead 自定义变量在本书中并未使用，知悉有此功能即可。</p>
-<p>运行 Vagrant#</p>
-<p>完成了 Homestead 的配置，接下来我们要开始启动虚拟机了。</p>
-<p>在命令中输入 vagrant，能看到 Vagrant 为我们提供了一些便利的命令行，下面简单介绍一下 Vagrant 常用的一些命令行的使用：</p>
-<p>命令行    说明<br>vagrant init    初始化 vagrant<br>vagrant up    启动 vagrant<br>vagrant halt    关闭 vagrant<br>vagrant ssh    通过 SSH 登录 vagrant（需要先启动 vagrant）<br>vagrant provision    重新应用更改 vagrant 配置<br>vagrant destroy    删除 vagrant</p>
+        <h3 id="搭建自己的shadowsocks梯子"><a href="#搭建自己的shadowsocks梯子" class="headerlink" title="搭建自己的shadowsocks梯子"></a>搭建自己的shadowsocks梯子</h3><h4 id="需要的工具"><a href="#需要的工具" class="headerlink" title="需要的工具"></a>需要的工具</h4><p>1.<a href="https://github.com/shadowsocks" target="_blank" rel="external">shadowsocks</a><br>2.国外服务器一台,<br>    服务器推荐使用<a href="https://www.vultr.com/?ref=7303094" target="_blank" rel="external">vultr</a>,这家的服务器比较便宜。<br>    支持支付宝付款但是最低需要充值10美元.<br>3.远程链接工具。Xshell, </p>
+<h3 id="购买服务器"><a href="#购买服务器" class="headerlink" title="购买服务器"></a>购买服务器</h3><p>1.进入官网，点击“create Account”创建账号，,注意密码需要大写+小写+数字。<br>2.进入首页点击“Service”服务器<br>3 选择服务器的位置，系统默认推荐最近的日本服务器5美元一个月,我自己用所以选择了纽约的$2.5美元一个月的,操作系统建议首选CentOS,<br><img src="http://oj42ceahd.bkt.clouddn.com/server.png" alt="服务器操作系统"><br>选择好后支付宝支付,vultr需要最低充值10美刀，充值后再点Deploy Now购买，vultr是按小时来计算收费的，使用不方便可以删除，重新换个地区的服务器来部署。</p>
+<h3 id="部署服务器"><a href="#部署服务器" class="headerlink" title="部署服务器"></a>部署服务器</h3><p>使用远程连接工具登录服务器<br>主机名在你购买的Servers服务器列表里查看,(主机名就是ip地址)<br><img src="http://oj42ceahd.bkt.clouddn.com/server1.png" alt="主机名"><br>连接时软件会先后提醒你输入用户名和密码，就是你服务器的账号密码.注意密码在登录过程中是不显示的,需要认真输入后敲击确认键登录.<br><img src="http://oj42ceahd.bkt.clouddn.com/server2.png" alt="登录"></p>
+<h4 id="服务器端安装SSR-shadowsocksR"><a href="#服务器端安装SSR-shadowsocksR" class="headerlink" title="服务器端安装SSR(shadowsocksR)"></a>服务器端安装SSR(shadowsocksR)</h4><p>//执行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate https://freed.ga/github/shadowsocksR.sh; bash shadowsocksR.sh</div></pre></td></tr></table></figure></p>
+<p>若提示：wget :command not found<br>请执行：yum install wget -y<br>然后在重复上一步操作<br><img src="http://oj42ceahd.bkt.clouddn.com/server3.png" alt="设置密码"><br>按照提示走就OK了!</p>
+<h3 id="锐速安装"><a href="#锐速安装" class="headerlink" title="锐速安装"></a>锐速安装</h3><p>安装锐速加速,一键更换内核脚本（Vultr需先执行此脚本）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -N --no-check-certificate https://freed.ga/kernel/ruisu.sh &amp;&amp; bash ruisu.sh</div></pre></td></tr></table></figure></p>
+<p>脚本安装需要1-3分钟，耐心等待服务器重启，服务器重启之后，重新连接继续安装就行了。</p>
+<p>锐速安装脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh &amp;&amp; bash serverspeeder.sh</div></pre></td></tr></table></figure></p>
+<p>备用脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh &amp;&amp; bash serverspeeder-all.sh</div></pre></td></tr></table></figure></p>
+<p>下载shadowsocks进行连接<br>启动shadowsocks右键点击进入服务器-&gt;编辑服务器页面,填入服务器地址和刚才部署设定的密码端口进行连接,到此大功告成,不成功重复以上步骤继续.</p>
 
       
     </div>
@@ -476,15 +408,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/07/15/hemostead的安装/" rel="next" title="hemostead配置">
+                <i class="fa fa-chevron-left"></i> hemostead配置
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/15/搭建自己的shadowsocks梯子/" rel="prev" title="搭建自己的shadowsocks梯子">
-                搭建自己的shadowsocks梯子 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -624,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#homestead配置文件"><span class="nav-number">1.</span> <span class="nav-text">homestead配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打开配置文件"><span class="nav-number">1.1.</span> <span class="nav-text">打开配置文件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建自己的shadowsocks梯子"><span class="nav-number">1.</span> <span class="nav-text">搭建自己的shadowsocks梯子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#需要的工具"><span class="nav-number">1.1.</span> <span class="nav-text">需要的工具</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#购买服务器"><span class="nav-number">2.</span> <span class="nav-text">购买服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署服务器"><span class="nav-number">3.</span> <span class="nav-text">部署服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器端安装SSR-shadowsocksR"><span class="nav-number">3.1.</span> <span class="nav-text">服务器端安装SSR(shadowsocksR)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#锐速安装"><span class="nav-number">4.</span> <span class="nav-text">锐速安装</span></a></li></ol></div>
             
 
           </div>
